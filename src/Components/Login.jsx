@@ -82,10 +82,10 @@ const Login = () => {
                         </div>
                     </div>
                     <div className='date-input-div'>
-                        <input type="date" className='first-input' style={{width:"150%"}}/>
+                        <input type="date" className='first-input' />
                         <input type="number" />
                         <input type="number" />
-                    </div>
+                                        </div>
                     <div className='Next-button-div'>
                         <button> <span className='btn-span'>Suivant</span>  </button>
                     </div>

@@ -98,7 +98,7 @@
   border-radius: 10px;
   text-align: center;
   padding: 0 -20%;
-  
+   
 }
 
 .policy-div div{
@@ -111,6 +111,7 @@
   margin-top: 20px;
   border: 1px solid rgb(213, 213, 213);
   border-radius: 5px;
+  
 }
 
 .close-window{
@@ -131,7 +132,7 @@
 
 .phNumber-paragraph{
  position: absolute;
- left: 71%;
+ left: 65%;
 }
 
 .birth-date-div{
@@ -164,22 +165,25 @@
 .date-input-div{
   display: flex;
   position: absolute;
-  top: 60%;
-  left: 10%;
+  top: 70%;
+  margin-left: 50px;
   justify-content: center;
-  padding: 0 -20%;
+  align-items: center;
+
   text-align: center;
 }
 
 .date-input-div input{
   margin-left: 15px;
   justify-content:baseline;
+  
 } 
 
 
 .first-input{
-  width: 60%;
+  width: 70%;
 }
+
 
 .Next-button-div{
   display: flex;
