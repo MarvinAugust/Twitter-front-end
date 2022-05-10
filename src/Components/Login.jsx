@@ -24,7 +24,6 @@ const Login = () => {
                         Ça se passe<br /> maintenant
                     </span>
                     <div className='intro-div-child'>
-
                         <span>
                             Rejoinez Twitter dés aujourd'hui
                         </span>
