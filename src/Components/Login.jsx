@@ -13,9 +13,9 @@ const Login = () => {
     }
     return (
         <div className='main-div'  >
-            <section className='twitter-image'>
+            <section className='twitter-image' style={{filter:filter}}>
             </section>
-            <section>
+            <section style={{filter:filter}}>
                 <div>
                     <FaTwitter className='twitter-icon' />
                 </div>
@@ -31,7 +31,9 @@ const Login = () => {
                     </div>
                     <div className='register-div' onClick={()=>{
                         setPopUp('visible')
+                       
                         setFilter('blur(4px)')
+                    
                     }}>
                         <span>s'inscrire avec un numéro télépho...</span>
                     </div>
@@ -48,10 +50,12 @@ const Login = () => {
                         <button>se connecter</button>
                     </div>
                 </div>
+            </section>
                 <div className='popUp-div' style={{visibility:popoUp}}>
                     <div className='close-window' onClick={()=>{
                         setPopUp('hidden')
-                    }}>
+                        setFilter('')
+                      }}>
                         <img src={close} style={{backgroundColor:'white',color:'black'}} width="30px"/>
                     </div>
                     <div>
@@ -65,13 +69,13 @@ const Login = () => {
                     </div>
                     <div >
                         <input type="Number" placeholder='0123456789'></input>
-                        <a><p className='phNumber-paragraph' style={{color:'rgb(42, 182, 237)'}}>Utiliser un emial</p></a>
+                        <a><p className='phNumber-paragraph' style={{color:'rgb(42, 182, 237)'}}>Utiliser un email</p></a>
                     </div>
                     <div className='birth-date-div'>
                         <span className='birth-date-span'>Date de naissance</span>
                         <div className='birth-div-child'>
                             <strong>
-                                <p className='birth-div-child-text'>Cette information ne sera pas affiché publiquement. Confirmez votre<be/>
+                                <p className='birth-div-child-text'>Cette information ne sera pas affiché publiquement. Confirmez votre<br/>
                                     âge, même si ce compte est poue une entreprise, un animal de <br/>
                                     compagnie ou autre chose
                                 </p>
@@ -79,12 +83,14 @@ const Login = () => {
                         </div>
                     </div>
                     <div className='date-input-div'>
-                        <input type="date" />
+                        <input type="date" className='first-input' style={{width:"150%"}}/>
                         <input type="number" />
                         <input type="number" />
                     </div>
+                    <div className='Next-button-div'>
+                        <button> <span className='btn-span'>Suivant</span>  </button>
+                    </div>
                 </div>
-            </section>
         </div>
     )
 }
