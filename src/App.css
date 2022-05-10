@@ -1,0 +1,154 @@
+.twitter-image{
+  width: 50%;
+  height: 100vh;
+  background-image: url(../src/images/Twitter-Login-page.png);
+  background-size: cover;
+
+}
+
+.main-div{
+  display: flex;
+}
+
+.twitter-icon{
+  position: absolute;
+  top: 6%;
+  left: 52%;
+  font-size: 48px;
+  color: rgb(15, 182, 228);
+}
+
+.intro-div{
+  position: absolute;
+  top: 20%;
+  left: 52%;
+
+}
+
+.intro-span{
+  font-size: 90px;
+  font-weight: bolder;
+}
+
+.intro-div-child{
+  margin-top: 20px ;
+}
+
+.intro-div-child > span{
+  font-size:40px ;
+  font-weight: bold;
+}
+
+.register-div{
+  margin-top: 120px;
+  background-color: rgb(15, 182, 228);
+  width: 45%;
+  padding: 12px 15px;
+  border-radius: 22px ;
+  text-align: center;
+  color: white;
+  font-size:medium;
+  font-weight: bold;
+  cursor: pointer;
+}
+.register-div:hover{
+  background-color: rgb(85, 150, 214);
+}
+
+.policy-div{
+  width: 40%;
+  display: inline;
+  font-size: 12px;
+}
+
+.have-account{
+  margin-top: 60px;
+}
+.check-account{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.connect-to-account > button{
+  width: 45%;
+  padding: 12px 15px;
+  border-radius: 22px ;
+  text-align: center;
+  color: rgb(15, 182, 228);
+  background-color: white;
+  font-size: medium;
+  font-weight: bold;
+  border:0.5px solid rgb(213, 213, 213);
+  margin-top:15px ;
+  cursor: pointer;
+}
+
+.connect-to-account > button:hover{
+  background-color: rgba(120, 188, 255, 0.182);
+}
+
+.popUp-div{
+  display: block;
+  position: absolute;
+  left: 35%;
+  top: 8%;
+  width: 35% ;
+  height: 85vh;
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.policy-div div{
+  width: 100%;
+  
+}
+.popUp-div > div > input{
+  width: 75% !important;
+  height: 7vh;
+  margin-top: 20px;
+  border: 1px solid rgb(213, 213, 213);
+  border-radius: 5px;
+}
+
+.close-window{
+  position: absolute;
+  left: 3%;
+  top: 2%;
+  font-size: 30px;
+  color: white;
+  height: 25px;
+  
+}
+
+.popUp-span{
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 20px !important;
+}
+
+.phNumber-paragraph{
+ position: absolute;
+ left: 71%;
+}
+
+.birth-date-div{
+  position: absolute;
+  top: 60%;
+  left: 13%;
+  text-align: left;
+}
+
+.birth-date-span{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.birth-div-child-text{
+  
+  color: rgb(153, 151, 151);
+}
+
+.date-input-div{
+  display: flex;
+}
