@@ -8,10 +8,12 @@ function App() {
   return (
     <div className="App">
     {/* <Login/> */}
-   <Feed/>
+   {/* <Feed/> */}
     <Routes>
+      <Route path='/' element={<Login/>}/>
       <Route path='/login' element={<Login/>}/>
-      <Route path='/login/register/feed' element={<Feed/>}/>
+
+      <Route path='/feed' element={<Feed/>}/>
       <Route path='/login/register' element={<InsertPass/>}/>
     </Routes>
     </div>

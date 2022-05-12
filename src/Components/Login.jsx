@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState,createContext } from 'react'
-import { FaTwitter, FaWindowClose } from "react-icons/fa";
+import { FaTwitter, FaWindowClose,FaHashtag } from "react-icons/fa";
 import close from '../images/closer.png'
 import { Link,Routes,Route } from 'react-router-dom';
 import InsertPass from './InsertPass';
@@ -19,7 +19,8 @@ const Login = () => {
     const [day,setDay]=useState('')
     const [thirdPopUp, setThird] = useState('hidden')
     const [inputBorder, setBorder] = useState(' 2px solid rgb(211, 209, 209)')
-    const[fourthPopUp,setFourth] = useState('hidden')
+    const [fourthPopUp,setFourth] = useState('hidden');
+    const [connect,setConnect] = useState('hidden')
     const shadow = ()=>{
         if(popoUp === 'visible'){
             setFilter('blur(4px)')
@@ -53,7 +54,8 @@ const Login = () => {
         setThird:setThird,
         setFilter:setFilter,
         fourthPopUp:fourthPopUp,
-        setFourth:setFourth
+        setFourth:setFourth,
+        setAccount:setAccount
     }
 
 
@@ -106,6 +108,12 @@ const Login = () => {
                         <span>
                             Rejoinez Twitter dés aujourd'hui
                         </span>
+                    </div>
+                    <div className='explorer-btn' onClick={()=>{
+                        setConnect('hidden');
+                    }}>
+                        <FaHashtag className='hashtag' />
+                        <span>Explorer</span>
                     </div>
                     <div className='register-div' onClick={()=>{
                         setPopUp('visible')

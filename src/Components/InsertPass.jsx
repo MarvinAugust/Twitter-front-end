@@ -3,12 +3,13 @@ import { useContext } from 'react'
 import { VisibilityContext } from './Login'
 import close from '../images/closer.png'
 import { FaTwitter, FaWindowClose } from "react-icons/fa";
-import {Link} from 'react-router-dom'
+import {Link,Navigate,useNavigate} from 'react-router-dom'
 const InsertPass = () => {
   const {thirdPopUp,formValue,setThird,setFilter,setFourth} = useContext(VisibilityContext)
   const [closeWin,setCLose] = useState('hidden');
   const [pssVal,setPss] = useState('')
   console.log(formValue)
+  const Navigate = useNavigate()
 
   const passwordValue=(e)=>{
     e.preventDefault()
@@ -27,8 +28,8 @@ const InsertPass = () => {
       })
     }).then(result=>result.json())
       .then(json=>console.log(json))
-      // setFourth('visible')
-      // setThird('hidden')
+      Navigate('/feed')
+     
   }
   return (
     <div>
@@ -54,7 +55,7 @@ const InsertPass = () => {
               <input type="password" className='account-input acc-npt'/>
               </div>
             </form>
-            <Link to='/login/register/feed'><button className='final-connect'type='submit' onClick={sender}>Se Connecter</button></Link>
+            <button className='final-connect'type='submit' onClick={sender}>Se Connecter</button>
           </div>
           {/* <p className='create-account-route'>Vous n'avez pas de compte ? <a href="" style={{color:"rgb(42, 182, 237)"}} onClick={(e)=>{
                           e.preventDefault()
