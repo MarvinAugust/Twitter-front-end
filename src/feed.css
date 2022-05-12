@@ -3,7 +3,7 @@ body{
 }
 .feed-main-div{
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     padding: 0 200px;
     display: flex;
 
@@ -12,9 +12,32 @@ body{
 .first-section{
     border:1px solid black;
     width:20% ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 .accessibilty-bar{
-    display: table-row;
+    display: flex;
+    flex-direction: column;
+}
+
+.icons{
+    font-size:30px;
+    padding-top: 15px;
+    cursor: pointer;
+    
+}
+.section1-btn{
+    background-color: rgb(42, 182, 237);
+    width: 130px;
+    padding: 9px 0;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top:30px;
 }
 
 
@@ -41,10 +64,6 @@ body{
     width: 40%;
 }
 
-.third-section{
-    border:1px solid black;
-    width: 20%;
-}
 
 .post-tweet-child1{
     display:flex;
@@ -76,4 +95,54 @@ body{
     font-size: 15px;
     font-weight: bold;
     margin-top: -10px;
+}
+
+
+.third-section{
+    border:1px solid black;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.search-bar{
+    width: 80%;
+    background-color: rgb(232, 231, 231);
+    height: 4vh;
+    padding-top:6px;
+    border-radius: 25px;
+}
+
+.search-bar input{
+    background-color: rgb(232, 231, 231);
+    border: none;
+}
+.search-bar input:focus{
+    outline: none; 
+}
+.recomanded-div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+}
+
+.tweet-style{
+    width: 100%;
+    border: 0.5px solid rgb(230, 230, 230);
+   
+    
+}
+
+.span-style{
+    font-weight: bold;
+    padding-top: 7px;
+    padding-left: 15px;
+}
+
+.style-paragraph{
+    padding-left: 78px;
+    margin-top: -28px;
 }
