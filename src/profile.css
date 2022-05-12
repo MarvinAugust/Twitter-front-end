@@ -1,0 +1,162 @@
+.main-section{
+    width: 40%;
+    height: 100vh;
+    background-color:#fff;
+    margin: auto;
+    font-size: 0.8rem;
+    border: 1px solid rgb(240, 237, 237);
+}
+.main-div{
+    height: 55%;
+    width: 40vw;
+    background-color: #fff;
+    border: 1px solid hsl(0, 9%, 94%);
+}
+.main-child{
+    height: 42%;
+    width: 40vw;
+    background-color: rgba(198, 202, 207, 0.89);
+}
+.profile-pic{
+    width:130px;
+    height: 130px;
+    text-align: center;
+    background-color: rgb(25, 103, 219);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    left: 32%;
+    top: 22%;
+    border: 2px solid #fff;
+    border-radius: 100px;
+}
+.profile-pic span{
+    font-size: 70px;
+    color: #fff;
+}
+.btn-div{
+    position: absolute;
+    left: 61%;
+    top: 32%; 
+    
+}
+.btn-div button{
+    border-radius: 17px;
+    padding: 6px;
+    width: 105px;
+    background-color: #fff;
+    border: 1px solid rgb(240, 237, 237);
+    font-weight: 749;
+    font-size: 1.15em
+}
+.btn-div button:hover{
+    background-color: #e8e9e8e0;
+}
+.profile-name{
+    display: flex;
+    background-color: white;
+    border: 1px solid rgb(240, 237, 237);
+    
+}
+.div-1{
+    display: block;
+    padding-left: 35px;
+    line-height: 0.6em;
+
+}
+.icon-arrow{
+    font-size: 18px;
+    margin-top: 15px;
+    margin-left: 20px;
+    
+}
+.div-body{
+    position: absolute;
+    left: 31%;
+    top: 38%; 
+    text-align: left;
+    line-height: 0.6em;
+}
+.history-div{
+    display: flex;
+    position: absolute;
+    left: 30%;
+    top: 58%; 
+    width: 100%;
+    height: 55px;
+    align-content: center;
+    background-color: #fff;  
+}
+.history-div :hover{
+    background-color:#e8e9e8e0;
+    
+}
+.tweets{
+    background-color: #fff;
+    border-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid rgb(231, 228, 228);
+    font-weight: bold;
+    font-size: 15px;
+}
+.tweets2{
+    background-color: #fff;
+    border-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+.media{
+    background-color: #fff;
+    border-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+.likes{
+    border-color: transparent;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid rgb(240, 237, 237);
+    font-weight: bold;
+    font-size: 15px;
+}
+.div-calender{
+    position: absolute;
+    left: 31%;
+    top: 49%; 
+    display: inline-block;
+}
+.div-calender span{
+    margin: 5px;
+}
+.div-followcount{
+    
+    display: flex;
+    text-align: left;
+    text-indent: 10px;
+    position: absolute;
+    left: 31%;
+    top: 54%; 
+    
+}
+.div-follow{
+    position: absolute;
+    left: 31%;
+    top: 65%;
+    background-color: #fff;
+    border-color: transparent; 
+}
+.div-follow h5{
+    font-weight: bolder;
+    
+}
