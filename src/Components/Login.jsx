@@ -4,7 +4,23 @@ import { FaTwitter, FaWindowClose } from "react-icons/fa";
 import close from '../images/closer.png'
 const Login = () => {
     const [popoUp, setPopUp] = useState('hidden')
-    const [filter,setFilter] = useState('')
+
+    const [account,setAccount] = useState('hidden')
+    const [filter,setFilter] = useState('');
+    const [form,setForm] = useState('')
+    const [name, setName] = useState('');
+    const [number,setNumber] = useState('');
+    const [birth,setBirth] = useState('');
+    const [birthMonth,setBirthMonth] = useState('')
+    const [day,setDay]=useState('')
+    const [thirdPopUp, setThird] = useState('hidden')
+    const [inputBorder, setBorder] = useState(' 2px solid rgb(211, 209, 209)')
+    const[fourthPopUp,setFourth] = useState('hidden')
+
+    // const changer = (e) => {
+    //     setValue(e.target.value)
+    //     console.log(value)
+    // }
 
     const shadow = ()=>{
         if(popoUp === 'visible'){
@@ -17,7 +33,7 @@ const Login = () => {
             </section>
             <section style={{filter:filter}}>
                 <div>
-                    <FaTwitter className='twitter-icon' />
+                    <FaTwitter className='twitter-icon log' />
                 </div>
                 <div className='intro-div'>
                     <span className='intro-span'>

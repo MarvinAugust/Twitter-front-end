@@ -10,13 +10,14 @@
   display: flex;
 }
 
-.twitter-icon{
+.log{
   position: absolute;
   top: 6%;
   left: 52%;
   font-size: 48px;
   color: rgb(15, 182, 228);
 }
+
 
 .intro-div{
   position: absolute;
