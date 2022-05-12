@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { VisibilityContext } from './Login'
 import close from '../images/closer.png'
 import { FaTwitter, FaWindowClose } from "react-icons/fa";
@@ -9,15 +9,32 @@ const Password = () => {
     const[confirmCode,setConfirm] = useState('');
     const[message,setMessage] = useState('');
 
-    const changer = (e)=>{
+    const sender = (e)=>{
         e.preventDefault();
-        
+        const myHeaders = new Headers({"Content-type":"application/json"})
+        fetch('http://localhost:3002/signup/password',{
+          method:'POST',
+          headers:myHeaders,
+          body:JSON.stringify({
+            password:value,
+            confirmed:confirmCode
+          })
+        }).then(response=>response.json())
+          .then(bson=>{
+            // const jsb = JSON.parse(bson)
+            console.log(bson)
+            setMessage(bson.message)
+          })
+    }
+    const inputValue = async(e)=>{
+    setValue(e.target.value)
+    
     }
 
-    const getVal=(e)=>{
-        setPassword(e.target.value);
-        console.log(password);
-    }
+    // useEffect(async()=>{
+    // console.log(value)
+    // },[])
+
   return (
     <div>
         <div className='popUp-div' style={{visibility:fourthPopUp}}>
@@ -36,18 +53,17 @@ const Password = () => {
             </div>
             <form>
             <div className="">
-
-                <input type="password" className='account-input acc-npt' onChange={getVal}/>
+                <input type="password" className='account-input acc-npt' onChange={inputValue}/>
             </div>
               <div className=''>
               <label htmlFor="" style={{fontSize:"13px",fontWeight:'bold'}} className='label'>Confirmer mot de passe</label>
                 <input type="password" className='account-input acc-ntt' onChange={(e)=>{
-                    // if(e.target.value !== )
+                   setConfirm(e.target.value)
                 }}/>
              <span>{message}</span>
               </div>
             </form>
-          <button className='final-connect'type='submit' >Se Connecter</button>
+          <button className='final-connect'type='submit' onClick={sender}>Se Connecter</button>
           </div>
           {/* <p className='create-account-route'>Vous n'avez pas de compte ? <a href="" style={{color:"rgb(42, 182, 237)"}} onClick={(e)=>{
                           e.preventDefault()

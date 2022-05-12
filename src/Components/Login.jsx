@@ -5,6 +5,7 @@ import close from '../images/closer.png'
 import { Link,Routes,Route } from 'react-router-dom';
 import InsertPass from './InsertPass';
 import Password from './Password';
+import { Feed } from './Feed';
 export const VisibilityContext = createContext()
 const Login = () => {
     const [popoUp, setPopUp] = useState('hidden')
@@ -190,7 +191,7 @@ const Login = () => {
                           </form>
                       </div>
                       <div className='btn-div'>
-                          <button type="submit" className='btt next-btn' onClick={findUser}> Suivant</button>
+                         <button type="submit" className='btt next-btn' onClick={findUser}>  Suivant</button>
                           <div>
                           <button className='btt forgotten-password-btn'>Mot de passe oublié ?</button>
                           </div>

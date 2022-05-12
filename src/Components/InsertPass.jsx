@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import { VisibilityContext } from './Login'
 import close from '../images/closer.png'
 import { FaTwitter, FaWindowClose } from "react-icons/fa";
-
+import {Link} from 'react-router-dom'
 const InsertPass = () => {
   const {thirdPopUp,formValue,setThird,setFilter,setFourth} = useContext(VisibilityContext)
   const [closeWin,setCLose] = useState('hidden');
@@ -54,7 +54,7 @@ const InsertPass = () => {
               <input type="password" className='account-input acc-npt'/>
               </div>
             </form>
-          <button className='final-connect'type='submit' onClick={sender}>Se Connecter</button>
+            <Link to='/login/register/feed'><button className='final-connect'type='submit' onClick={sender}>Se Connecter</button></Link>
           </div>
           {/* <p className='create-account-route'>Vous n'avez pas de compte ? <a href="" style={{color:"rgb(42, 182, 237)"}} onClick={(e)=>{
                           e.preventDefault()
