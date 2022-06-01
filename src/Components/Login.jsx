@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useState,createContext } from 'react'
 import { FaTwitter, FaWindowClose,FaHashtag } from "react-icons/fa";
 import close from '../images/closer.png'
@@ -6,6 +6,8 @@ import { Link,Routes,Route } from 'react-router-dom';
 import InsertPass from './InsertPass';
 import Password from './Password';
 import { Feed } from './Feed';
+import Reply from './Reply';
+import { NewContext } from '../App';
 export const VisibilityContext = createContext()
 const Login = () => {
     const [popoUp, setPopUp] = useState('hidden')
@@ -21,6 +23,13 @@ const Login = () => {
     const [inputBorder, setBorder] = useState(' 2px solid rgb(211, 209, 209)')
     const [fourthPopUp,setFourth] = useState('hidden');
     const [connect,setConnect] = useState('hidden')
+    const [replyPop,setReply] = useState('hidden')
+    const [isOk, setOk] = useState()
+
+    const [errMessage,setErrMsg] = useState('')
+    const {mainVal,explore,setExplorer} = useContext(NewContext)
+    console.log(mainVal)
+    let handler = mainVal
     const shadow = ()=>{
         if(popoUp === 'visible'){
             setFilter('blur(4px)')
@@ -55,7 +64,9 @@ const Login = () => {
         setFilter:setFilter,
         fourthPopUp:fourthPopUp,
         setFourth:setFourth,
-        setAccount:setAccount
+        setAccount:setAccount,
+        replyPop:replyPop,
+        setReply:setReply
     }
 
 
@@ -76,7 +87,8 @@ const Login = () => {
 
                 setFourth('visible')
                 setPopUp('hidden')
-    }
+
+}
     const findUser = (e)=>{
         e.preventDefault()
         const myHeaders = new Headers({"Content-type":"application/json"})
@@ -87,12 +99,36 @@ const Login = () => {
                 identity:form
             })
         }).then(result=>result.json())
-            .then(json=>console.log(json))
+            .then(json=>{
+                console.log(json.exist)
+                if(json.exist === true){
+                    setThird('visible')
+                    setAccount('hidden')
+                    setErrMsg('');
+                }else{
+                    setThird('hidden')
+                    setAccount('visible')
+                    setErrMsg('identifiant unconnu')
+                }
+        })
+   
+           
+          
+           
+    } 
+    const getInfo = ()=>{
+        if(isOk === true){
             setThird('visible')
             setAccount('hidden')
-    } 
+            setErrMsg('')
+        }else{
+            setThird('hidden')
+            setAccount('visible')
+            setErrMsg('Identifiant unconnu')
+        }
+    }
     return (
-        <div className='main-div'  >
+        <div className='main-div'>
             <section className='twitter-image' style={{filter:filter}}>
             </section>
             <section style={{filter:filter}}>
@@ -111,6 +147,7 @@ const Login = () => {
                     </div>
                     <div className='explorer-btn' onClick={()=>{
                         setConnect('hidden');
+                        setExplorer(true);
                     }}>
                         <FaHashtag className='hashtag' />
                         <span>Explorer</span>
@@ -174,10 +211,10 @@ const Login = () => {
                         </div>
                     </div>
                     <div className='date-input-div'>
-                        <input type="year" className='first-input' onChange={registerBirth}/>
+                        <input type="number" className='first-input' onChange={registerBirth}/>
                         <input type="number" onChange={registerMonth}/>
                         <input type="number" onChange={registerDay}/>
-                                        </div>
+                    </div>
                     <div className='Next-button-div'>
                         <button type='submit' onClick={poster}> <span className='btn-span'>Suivant</span>  </button>
                     </div>
@@ -193,6 +230,7 @@ const Login = () => {
                     <FaTwitter style={{color:'rgb(42, 182, 237)', fontSize:'40px'}}/>
                     <div className='account-div'>
                       <span>Connectez-vous à<br/>Twitter</span>
+                      <span className='Error-message-span'>{errMessage}</span>
                       <div className='account-child'>
                           <form onChange={formValue}>
                               <input type="text" className='account-input' style={{border:inputBorder}} placeholder='Numéro de téléphone,address emi...' onClick={()=>setBorder('2px solid rgb(42, 182, 237)')}/>

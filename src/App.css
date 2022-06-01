@@ -360,3 +360,11 @@ a{
 .hover-btn:hover{
   background:linear-gradient(0deg,rgb(167, 18, 18),black);
 }
+
+.Error-message-span{
+  color: red;
+  font-size:18px !important;
+  position: absolute;
+  top: 37%;
+  left: 33%;
+}
